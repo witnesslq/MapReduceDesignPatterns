@@ -41,3 +41,23 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+
+*.class
+*.jar
+*.war
+*.ear
+*.prefs
+*.project
+*.setting/
+*.settings/
+*.classpath
+
+*.metadata/
+Servers/
