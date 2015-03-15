@@ -61,3 +61,6 @@ Temporary Items
 
 *.metadata/
 Servers/
+
+FSRFDCServer/
+FSRFWebClient/
