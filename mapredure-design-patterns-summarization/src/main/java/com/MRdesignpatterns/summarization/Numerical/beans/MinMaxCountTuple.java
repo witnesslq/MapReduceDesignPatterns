@@ -15,16 +15,20 @@ import org.apache.hadoop.io.Writable;
  */
 public class MinMaxCountTuple implements Writable {
     
-	public long getCount() {
-		return count;
-	}
-
-	public void setCount(long count) {
-		this.count = count;
-	}
-
+	
+    /**
+     * 计算一个key记录的最小日期
+     */
 	private Date min = new Date();
+	
+	/**
+	 * 计算一个key记录的最大日期
+	 */
 	private Date max = new Date();
+	
+	/**
+	 * 计算一个key对应的总记录数
+	 */
 	private long count = 0;
 	
 	private final static SimpleDateFormat frmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
@@ -55,6 +59,14 @@ public class MinMaxCountTuple implements Writable {
 
 	public void setMax(Date max) {
 		this.max = max;
+	}
+	
+	public long getCount() {
+		return count;
+	}
+
+	public void setCount(long count) {
+		this.count = count;
 	}
 
 	@Override
