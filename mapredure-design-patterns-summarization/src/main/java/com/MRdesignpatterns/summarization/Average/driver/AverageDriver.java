@@ -1,6 +1,5 @@
 package com.MRdesignpatterns.summarization.Average.driver;
 
-import java.io.IOException;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -19,7 +18,7 @@ public class AverageDriver {
 		Configuration conf = new Configuration();
 		
 		if (args.length != 2) {
-		System.err.println("Usage: CommentWordCount <in> <out>");
+		System.err.println("Usage:  <in> <out>");
 		System.exit(2);
 		}
 		Job job = new Job(conf, "AverageDesignPatterns");
