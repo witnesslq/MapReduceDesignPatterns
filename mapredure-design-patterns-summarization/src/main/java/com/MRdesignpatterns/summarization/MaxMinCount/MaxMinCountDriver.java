@@ -21,7 +21,7 @@ public class MaxMinCountDriver {
 		System.err.println("Usage:  <in> <out>");
 		System.exit(2);
 		}
-		Job job = new Job(conf, "NumericalDesignPatterns");
+		Job job = Job.getInstance(conf, "NumericalDesignPatterns");
 		job.setJarByClass(MaxMinCountDriver.class);
 		job.setMapperClass(MinMaxCountMapper.class);
 		job.setCombinerClass(MinMaxCountReducer.class);

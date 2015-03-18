@@ -21,7 +21,7 @@ public class AverageDriver {
 		System.err.println("Usage:  <in> <out>");
 		System.exit(2);
 		}
-		Job job = new Job(conf, "AverageDesignPatterns");
+		Job job =  Job.getInstance(conf, "AverageDesignPatterns");
 		job.setJarByClass(AverageDriver.class);
 		job.setMapperClass(AverageMapper.class);
 		job.setCombinerClass(AverageReducer.class);
