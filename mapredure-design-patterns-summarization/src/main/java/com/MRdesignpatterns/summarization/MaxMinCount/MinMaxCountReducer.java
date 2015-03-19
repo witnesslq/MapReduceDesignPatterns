@@ -25,8 +25,8 @@ public class MinMaxCountReducer extends Reducer<Text, MinMaxCountTuple, Text, Mi
         * 每一次调用都要先初始化一次输出值
         */
 		outTuple.setCount(0);
-		outTuple.setMax(null);
-		outTuple.setMin(null);
+		outTuple.setMax(0);
+		outTuple.setMin(0);
 		
 		int count =0;
 		
@@ -41,14 +41,14 @@ public class MinMaxCountReducer extends Reducer<Text, MinMaxCountTuple, Text, Mi
 			/**
 			 * 如果outTuple(输出元组)最小值为空，则直接赋值，否则和新输入值比较，取最小者
 			 */
-			if(outTuple.getMin()==null||mmcp.getMin().compareTo(outTuple.getMin())<0){
+			if(outTuple.getMin()==0||mmcp.getMin()<outTuple.getMin()){
 				outTuple.setMin(mmcp.getMin());
 			}
 			
 			/**
 			 * 如果outTuple(输出元组)最大值为空，则直接赋值，否则和新输入值比较，取最大者
 			 */
-			if(outTuple.getMax()==null||mmcp.getMax().compareTo(outTuple.getMax())<0){
+			if(outTuple.getMax()==0||mmcp.getMax()>outTuple.getMax()){
 				outTuple.setMax(mmcp.getMax());
 			}
 			
@@ -56,8 +56,6 @@ public class MinMaxCountReducer extends Reducer<Text, MinMaxCountTuple, Text, Mi
 			 * 计数值累加，计算用户的总记录数
 			 */
 			count += mmcp.getCount();
-			
-			
 			
 		}
 		

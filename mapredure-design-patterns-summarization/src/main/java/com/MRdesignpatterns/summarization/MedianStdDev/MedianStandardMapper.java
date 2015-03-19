@@ -3,7 +3,9 @@ package com.MRdesignpatterns.summarization.MedianStdDev;
 import java.io.IOException;
 
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.SortedMapWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 /**
@@ -12,17 +14,19 @@ import org.apache.hadoop.mapreduce.Mapper;
  * @author panzhichun 2015-03-16
  * 假设输入数据格式是：时间（小时）<tab> 上网流量（M）,计算一个城市一天每个个小时产生的上网流量的中位数和标准差
  */
-public class MedianStandardMapper extends Mapper<IntWritable, IntWritable, IntWritable, SortedMapWritable> {
+public class MedianStandardMapper extends Mapper<Text, Text, Text, SortedMapWritable> {
 
 	
 	SortedMapWritable outValue = new SortedMapWritable();
-	IntWritable one = new IntWritable(1);
+	LongWritable one = new LongWritable(1);
 	
 	@Override
-	protected void map(IntWritable key,IntWritable value,Context context)
+	protected void map(Text key,Text value,Context context)
 			throws IOException, InterruptedException {
 	
-		outValue.put(value, one);
+		
+		
+		outValue.put(new LongWritable(Long.parseLong(value.toString())), one);
 		
 		/**
 		 * 把输入的数据转换成时间，流量和计数输出

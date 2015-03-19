@@ -19,13 +19,28 @@ import com.MRdesignpatterns.summarization.Average.CountAverageTuple;
  */
 public class CountGenderDriver {
 
+	
 	public static void main(String[] args) throws Exception {
 
 		Configuration conf = new Configuration();
+		
 		if (args.length != 2) {
 			System.err.println("Usage:  <in> <out>");
 			System.exit(2);
 		}
+		
+		Path outputPath = new Path(args[1]);
+        FileSystem outfs =outputPath.getFileSystem(conf);
+    	//这里是为了调试的时候不必每次都手动删除输出文件
+    	if(outfs.exists(outputPath)){
+    		try{
+    			outfs.delete(outputPath,true);
+    		}catch(Exception e){
+    			e.printStackTrace();
+    		}
+    		outfs.close();
+    	}
+		
 		Job job =  Job.getInstance(conf, "CountDesignPatterns");
 		job.setJarByClass(CountGenderDriver.class);
 		job.setMapperClass(CountGenderMapper.class);
@@ -40,7 +55,16 @@ public class CountGenderDriver {
 						+ counter.getValue());
 			}
 		}
-		FileSystem.get(conf).delete(new Path(args[1]), true);
-		System.exit(code);
+		//再次获取FS
+		outfs =outputPath.getFileSystem(conf);
+		//删除输出文件
+		if(outfs.exists(outputPath)){
+    		try{
+    			outfs.delete(outputPath,true);
+    		}catch(Exception e){
+    			e.printStackTrace();
+    		}
+    		outfs.close();
+    	}
 	}
 }

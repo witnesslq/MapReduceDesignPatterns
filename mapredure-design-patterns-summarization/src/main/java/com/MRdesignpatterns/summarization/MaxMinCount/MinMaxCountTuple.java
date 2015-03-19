@@ -17,48 +17,31 @@ public class MinMaxCountTuple implements Writable {
     
 	
     /**
-     * 计算一个key记录的最小日期
+     * 计算一个
      */
-	private Date min = new Date();
+	private long min ;
 	
 	/**
 	 * 计算一个key记录的最大日期
 	 */
-	private Date max = new Date();
+	private long max ;
 	
 	/**
 	 * 计算一个key对应的总记录数
 	 */
-	private long count = 0;
+	private long count;
 	
-	private final static SimpleDateFormat frmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
 	
 	public void readFields(DataInput in) throws IOException {
-		min = new Date(in.readLong());
-		max = new Date(in.readLong());
+		min = in.readLong();
+		max = in.readLong();
 		count = in.readLong();
 	}
 
 	public void write(DataOutput out) throws IOException {
-		out.writeLong(min.getTime());
-		out.writeLong(max.getTime());
+		out.writeLong(min);
+		out.writeLong(max);
 		out.writeLong(count);
-	}
-
-	public Date getMin() {
-		return min;
-	}
-
-	public void setMin(Date min) {
-		this.min = min;
-	}
-
-	public Date getMax() {
-		return max;
-	}
-
-	public void setMax(Date max) {
-		this.max = max;
 	}
 	
 	public long getCount() {
@@ -71,7 +54,26 @@ public class MinMaxCountTuple implements Writable {
 
 	@Override
 	public String toString() {
-	   return frmt.format(min) + "\t" + frmt.format(max) + "\t" + count;
+	   return min + "\t" + max + "\t" + count;
 	}
+
+	public Long getMin() {
+		return min;
+	}
+
+	public void setMin(long min) {
+		this.min = min;
+	}
+
+	public Long getMax() {
+		return max;
+	}
+
+	public void setMax(long max) {
+		this.max = max;
+	}
+
+	
+	
 
 }
