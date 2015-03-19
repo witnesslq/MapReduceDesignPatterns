@@ -35,7 +35,7 @@ public class AverageReducer extends Reducer<IntWritable, CountAverageTuple,IntWr
 		 * 使用一个迭代器，性能比for循环要好一些
 		 */
 		Iterator<CountAverageTuple> it = values.iterator();
-		if(it.hasNext()){
+		while(it.hasNext()){
 			CountAverageTuple catp = new CountAverageTuple();
 			catp = it.next();
 			count = catp.getCount();

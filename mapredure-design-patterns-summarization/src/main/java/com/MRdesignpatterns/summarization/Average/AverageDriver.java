@@ -15,8 +15,8 @@ import com.MRdesignpatterns.summarization.Average.AverageReducer;
 public class AverageDriver {
 
 	public static void main(String[] args) throws Exception {
-		Configuration conf = new Configuration();
 		
+		Configuration conf = new Configuration();
 		if (args.length != 2) {
 		System.err.println("Usage:  <in> <out>");
 		System.exit(2);

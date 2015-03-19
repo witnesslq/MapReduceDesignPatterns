@@ -34,7 +34,7 @@ public class MinMaxCountReducer extends Reducer<Text, MinMaxCountTuple, Text, Mi
 		 * 使用一个迭代器，性能比for循环要好一些
 		 */
 		Iterator<MinMaxCountTuple> it = values.iterator();
-		if(it.hasNext()){
+		while(it.hasNext()){
 			MinMaxCountTuple mmcp = new MinMaxCountTuple();
 			mmcp =  it.next();
 			

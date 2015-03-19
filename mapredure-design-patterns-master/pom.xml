@@ -12,6 +12,7 @@
 
 	<modules>
 		<module>../mapredure-design-patterns-summarization</module>
+		<module>../mapredure-design-patterns-filtering</module>
 	</modules>
 
 	<properties>

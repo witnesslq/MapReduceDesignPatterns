@@ -30,7 +30,7 @@ public class MedianStandardRedure extends Reducer<IntWritable, SortedMapWritable
 		long totalCount = 0;
 		
 		Iterator<SortedMapWritable> it =  values.iterator();
-		if(it.hasNext()){
+		while(it.hasNext()){
 			Iterator<Entry<WritableComparable, Writable>>  entrySetIterator = it.next().entrySet().iterator();
 			if(entrySetIterator.hasNext()){
 				Entry<WritableComparable, Writable>  entry =  entrySetIterator.next();
