@@ -24,7 +24,7 @@ public class PartitionMapper extends Mapper<Object, Text, IntWritable, Text> {
 			throws IOException, InterruptedException {
 
 		inValue = praseData(value.toString());
-		if(inValue.size()>0){
+		if(!inValue.isEmpty()){
 			outKey.set(inValue.get("grade"));
 			context.write(outKey, value);
 		}
