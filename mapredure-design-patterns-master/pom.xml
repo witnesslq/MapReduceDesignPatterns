@@ -5,6 +5,7 @@
 	<groupId>com.hadoop.mapredure</groupId>
 	<artifactId>mapredure-design-patterns-master</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
 	<packaging>pom</packaging>
 
 	<name>mapredure-design-patterns-master</name>
@@ -13,7 +14,7 @@
 	<modules>
 		<module>../mapredure-design-patterns-summarization</module>
 		<module>../mapredure-design-patterns-filtering</module>
-    <module>mapredure-design-patterns-dataorganization</module>
+        <module>。。/mapredure-design-patterns-dataorganization</module>
   </modules>
 
 	<properties>
