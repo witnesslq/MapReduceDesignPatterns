@@ -14,8 +14,8 @@
 	<modules>
 		<module>../mapredure-design-patterns-summarization</module>
 		<module>../mapredure-design-patterns-filtering</module>
-        <module>。。/mapredure-design-patterns-dataorganization</module>
-         <module>。。/mapredure-design-patterns-jion</module>
+        <module>../mapredure-design-patterns-dataorganization</module>
+         <module>../mapredure-design-patterns-jion</module>
   </modules>
 
 	<properties>
