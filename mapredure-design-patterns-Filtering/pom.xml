@@ -9,10 +9,10 @@
 		<relativePath>../mapredure-design-patterns-master/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>mapredure-design-patterns-Filtering</artifactId>
+	<artifactId>mapredure-design-patterns-filtering</artifactId>
 	<packaging>jar</packaging>
 
-	<name>mapredure-design-patterns-Filtering</name>
+	<name>mapredure-design-patterns-filtering</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
