@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.Mapper;
  * 分层结构模式和连接模式有一点点像，只不过分层结构模式产生的输出是一个层次结构的结果，例如，一个学生和学生对应的各门课程名称
  * 
  * 这个Mapper输入的是一个学生数据集，分别是学生的ID，和学生的资料
- * @author panzhichun
+ * @author 
  *
  */
 public class PersonMapper extends Mapper<IntWritable,Text, IntWritable, Text> {
